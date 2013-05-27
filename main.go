@@ -2,7 +2,7 @@
 package tidy
 
 /*
-#cgo darwin CFLAGS: -I/usr/include
+#cgo darwin CFLAGS: -I/usr/include/tidy
 #cgo linux CFLAGS: -I/usr/include/tidy
 #cgo LDFLAGS: -ltidy -L/usr/local/lib
 #include <tidy.h>
@@ -49,7 +49,7 @@ func (this *Tidy) Tidy(htmlSource string) (string, error) {
 	}
 
 	if rc >= 0 {
-		rc = C.tidyCleanAndRepair(this.tdoc) // Tidy it up!	
+		rc = C.tidyCleanAndRepair(this.tdoc) // Tidy it up!
 	}
 
 	if rc >= 0 {
